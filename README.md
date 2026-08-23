@@ -1,6 +1,6 @@
 # Deploy and Host Claude Agent SDK Worker on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/claude-agent-worker)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/claude-agent-sdk-worker)
 
 Run **scheduled autonomous Claude agents** on your own infrastructure — the official-SDK alternative to OpenClaw and Hermes for recurring jobs. Define tasks in YAML (a cron schedule plus a plain-English prompt), and a worker built on Anthropic's official [`@anthropic-ai/claude-agent-sdk`](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk) runs each one with real tools — web search, web fetch, bash, file access — records every run in Postgres, and shows results on a password-protected status page.
 
