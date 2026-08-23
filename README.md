@@ -73,4 +73,4 @@ An always-on scheduler with persistent history needs a home; ~$5–10/mo on Rail
 
 *Built by [Bubbles Studio](https://bubbles.studio) — we build AI automation systems for businesses. Need custom agents wired into your CRM, docs, or data? [Get in touch](https://bubbles.studio).*
 
-*More Bubbles templates: [WhatsApp AI Receptionist](https://railway.com/deploy/whatsapp-ai-receptionist) · [Postgres S3 Backup](https://railway.com/deploy/sparkling-creation) · [Webhook Inspector](https://railway.com/deploy/webhook-inspector)*
+*More Bubbles templates: [n8n Production Stack](https://railway.com/deploy/n8n-production-stack-queue-mode) · [WhatsApp AI Receptionist](https://railway.com/deploy/whatsapp-ai-receptionist) · [Postgres S3 Backup](https://railway.com/deploy/sparkling-creation) · [Webhook Inspector](https://railway.com/deploy/webhook-inspector)*
