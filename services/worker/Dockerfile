@@ -19,5 +19,8 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY services/worker/tasks.yaml ./tasks.yaml
 COPY services/worker/package.json ./package.json
+# the Agent SDK refuses permissionMode bypassPermissions as root — run unprivileged
+RUN mkdir -p /app/workspace && chown -R node:node /app
+USER node
 EXPOSE 8080
 CMD ["node", "dist/index.js"]
