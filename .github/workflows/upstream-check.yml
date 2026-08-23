@@ -1,0 +1,36 @@
+name: Upstream version check
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Mondays 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check upstream versions
+        run: bash .github/scripts/upstream-check.sh
+
+      - name: Open version-bump PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/upstream-bump
+          title: "chore: bump pinned base image digest and npm dependencies"
+          commit-message: "chore: bump pinned base image digest and npm dependencies"
+          body: |
+            Automated weekly pin refresh: node:22-slim digest + latest
+            @anthropic-ai/claude-agent-sdk, node-cron, pg, yaml.
+
+            Review the SDK changelog, then run a from-scratch test deploy
+            before merging (see CLAUDE.md §5 maintenance loop).

@@ -1,0 +1,47 @@
+# Default task definitions. Override without forking by setting the TASKS_YAML
+# variable on the worker service (paste a whole YAML document like this one).
+#
+# Fields per task:
+#   name          unique id (used in run history and /run/<name>)
+#   schedule      cron expression, evaluated in the TZ variable's timezone
+#   prompt        what the agent should do; ${VARS} resolve from service Variables
+#   enabled       default true
+#   model         default: CLAUDE_MODEL variable, else claude-opus-4-8
+#   maxTurns      agent loop cap, default 30
+#   allowedTools  default: WebSearch, WebFetch, Read, Write, Glob, Grep, Bash
+
+tasks:
+  - name: daily-research-digest
+    schedule: "0 7 * * *"
+    prompt: >
+      Research the most important developments from the last 24 hours about:
+      ${RESEARCH_TOPIC}. Use web search to find primary sources. Write a concise
+      digest: 5-8 bullet points, each with a one-line takeaway and a source link,
+      followed by a 3-sentence "why it matters" summary. Return the full digest
+      as your final answer.
+    allowedTools: [WebSearch, WebFetch]
+    maxTurns: 25
+
+  - name: weekly-rss-summary
+    schedule: "0 8 * * 1"
+    prompt: >
+      Fetch these RSS/Atom feeds: ${RSS_FEEDS}. Review items from the past 7 days
+      and write a markdown briefing grouped by theme: what happened, why it
+      matters, links. Keep it under 600 words. Return the briefing as your final
+      answer.
+    allowedTools: [WebFetch]
+    maxTurns: 20
+
+  - name: repo-issue-triage
+    # enable after setting TRIAGE_REPO (owner/name) and optionally GITHUB_TOKEN
+    enabled: false
+    schedule: "0 6 * * *"
+    prompt: >
+      Triage GitHub issues for the repository ${TRIAGE_REPO}. Use the GitHub REST
+      API via curl (send an Authorization header with GITHUB_TOKEN if the
+      environment variable is set). Find issues opened or updated in the last 24
+      hours, categorize each (bug / feature / question / support), flag anything
+      urgent, and draft a suggested one-line first response for the three most
+      important ones. Return a markdown triage report.
+    allowedTools: [Bash, WebFetch]
+    maxTurns: 25
