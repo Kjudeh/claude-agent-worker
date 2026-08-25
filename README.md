@@ -1,6 +1,6 @@
 # Deploy and Host Claude Agent SDK Worker on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/claude-agent-sdk-worker)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/claude-agent-sdk-worker?referralCode=qxxcuG)
 
 Run **scheduled autonomous Claude agents** on your own infrastructure — the official-SDK alternative to OpenClaw and Hermes for recurring jobs. Define tasks in YAML (a cron schedule plus a plain-English prompt), and a worker built on Anthropic's official [`@anthropic-ai/claude-agent-sdk`](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk) runs each one with real tools — web search, web fetch, bash, file access — records every run in Postgres, and shows results on a password-protected status page.
 
@@ -73,4 +73,4 @@ An always-on scheduler with persistent history needs a home; ~$5–10/mo on Rail
 
 *Built by [Bubbles Studio](https://bubbles.studio) — we build AI automation systems for businesses. Need custom agents wired into your CRM, docs, or data? [Get in touch](https://bubbles.studio).*
 
-*More Bubbles templates: [AI Gateway (LiteLLM × Langfuse)](https://railway.com/deploy/ai-gateway-observability-litellm-langfus) · [n8n Production Stack](https://railway.com/deploy/n8n-production-stack-queue-mode) · [WhatsApp AI Receptionist](https://railway.com/deploy/whatsapp-ai-receptionist) · [Postgres S3 Backup](https://railway.com/deploy/sparkling-creation) · [Webhook Inspector](https://railway.com/deploy/webhook-inspector)*
+*More Bubbles templates: [AI Gateway (LiteLLM × Langfuse)](https://railway.com/deploy/ai-gateway-observability-litellm-langfus?referralCode=qxxcuG) · [n8n Production Stack](https://railway.com/deploy/n8n-production-stack-queue-mode?referralCode=qxxcuG) · [WhatsApp AI Receptionist](https://railway.com/deploy/whatsapp-ai-receptionist?referralCode=qxxcuG) · [Postgres S3 Backup](https://railway.com/deploy/sparkling-creation?referralCode=qxxcuG) · [Webhook Inspector](https://railway.com/deploy/webhook-inspector?referralCode=qxxcuG)*
